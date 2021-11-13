@@ -1,12 +1,10 @@
 from rest_framework import serializers
 
-from empapp.models import Employee
+from empapp.models import StaffPosition
 
 
-class EmployeeSerializer(serializers.ModelSerializer):
-    pid = serializers.IntegerField(source='manager.pk', read_only=True)
-    title = serializers.CharField(source='job_title')
+class OrgChartSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Employee
-        fields = ['id', 'pid', 'name', 'title']
+        model = StaffPosition
+        fields = '__all__'

@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
-from empapp.models import Employee
-from empapp.serializers import EmployeeSerializer
+from empapp.models import StaffPosition
+from empapp.serializers import OrgChartSerializer
 
 
-class EmployeesViewSet(ModelViewSet):
-    serializer_class = EmployeeSerializer
-    queryset = Employee.objects.all()
+class OrgChartViewSet(ModelViewSet):
+    serializer_class = OrgChartSerializer
+    queryset = StaffPosition.objects.all()
