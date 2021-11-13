@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import OrgChart from '@balkangraph/orgchart.js';
+import classes from './MainChart.module.css'
 
-export default class extends Component {
+class MainOrgchart extends Component {
 
     constructor(props) {
         super(props);
@@ -14,6 +15,7 @@ export default class extends Component {
 
     componentDidMount() {
         this.chart = new OrgChart(this.divRef.current , {
+            template: 'rony',
             nodes: this.props.nodes,
 
             nodeBinding: {
@@ -25,7 +27,11 @@ export default class extends Component {
 
     render() {
         return (
-            <div id="tree" ref={this.divRef}/>
+            <div className={classes.tree}>
+                <div id="tree" ref={this.divRef}/>
+            </div>
         );
     }
 }
+
+export default MainOrgchart

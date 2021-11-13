@@ -1,0 +1,46 @@
+.header {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #006992;
+  padding: 0 12px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.header li {
+  margin-left: 3rem;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+}
+
+.header a:hover,
+.header a:active,
+.header a.active {
+  text-decoration: underline;
+}
+
+.badge {
+  background-color: #A30000;
+  color: white;
+  border-radius: 12px;
+  padding: 0 1rem;
+  margin-left: 0.5rem;
+}
