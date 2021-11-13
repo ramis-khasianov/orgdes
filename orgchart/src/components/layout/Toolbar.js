@@ -1,5 +1,7 @@
 import {Link} from 'react-router-dom';
 import classes from './Toolbar.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCog } from '@fortawesome/free-solid-svg-icons'
 
 const Toolbar = () => {
 
@@ -18,8 +20,12 @@ const Toolbar = () => {
                 <Link to="/asis">Фактическая</Link>
                 <Link to="/modeled">Моделирование</Link>
             </div>
+            <div className={classes.btn}>
+                <FontAwesomeIcon icon={faCog} />
+            </div>
+
             <div>
-                <Link className={classes.btn}>Изменения</Link>
+                <Link className={classes.btn}>Согласовать</Link>
             </div>
         </div>
     );
