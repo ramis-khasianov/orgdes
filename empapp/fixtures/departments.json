@@ -1,0 +1,57 @@
+[
+{
+  "model": "empapp.department",
+  "pk": "1",
+  "fields": {
+    "title": "Департамент управления продуктами",
+    "parent_department": null,
+    "organization": "1",
+    "created_date": "2021-11-13T17:42:23.989Z",
+    "updated_date": "2021-11-13T17:44:19.117Z"
+  }
+},
+{
+  "model": "empapp.department",
+  "pk": "2",
+  "fields": {
+    "title": "Отдел управления продуктами",
+    "parent_department": "1",
+    "organization": "1",
+    "created_date": "2021-11-13T17:44:11.962Z",
+    "updated_date": "2021-11-13T17:44:11.962Z"
+  }
+},
+{
+  "model": "empapp.department",
+  "pk": "3",
+  "fields": {
+    "title": "Отдел продуктовой аналитики",
+    "parent_department": "1",
+    "organization": "1",
+    "created_date": "2021-11-13T17:44:32.641Z",
+    "updated_date": "2021-11-13T17:44:32.641Z"
+  }
+},
+{
+  "model": "empapp.department",
+  "pk": "4",
+  "fields": {
+    "title": "Отдел дизайна",
+    "parent_department": "1",
+    "organization": "1",
+    "created_date": "2021-11-13T17:44:59.033Z",
+    "updated_date": "2021-11-13T17:44:59.033Z"
+  }
+},
+{
+  "model": "empapp.department",
+  "pk": "5",
+  "fields": {
+    "title": "Группа управления проектами",
+    "parent_department": "2",
+    "organization": "1",
+    "created_date": "2021-11-13T17:45:47.995Z",
+    "updated_date": "2021-11-13T17:45:47.995Z"
+  }
+}
+]

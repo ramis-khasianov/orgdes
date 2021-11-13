@@ -1,0 +1,86 @@
+[
+{
+  "model": "empapp.jobtitle",
+  "pk": "1",
+  "fields": {
+    "title": "Директор по продуктам"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "10",
+  "fields": {
+    "title": "Руководитель отдела"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "11",
+  "fields": {
+    "title": "Младший дизайнер интерфейсов"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "12",
+  "fields": {
+    "title": "Методолог"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "2",
+  "fields": {
+    "title": "Менеджер продукта"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "3",
+  "fields": {
+    "title": "Старший менеджер продукта"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "4",
+  "fields": {
+    "title": "Менеджер проектов"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "5",
+  "fields": {
+    "title": "Младший менеджер проектов"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "6",
+  "fields": {
+    "title": "Старший аналитик"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "7",
+  "fields": {
+    "title": "Аналитик"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "8",
+  "fields": {
+    "title": "Дизайнер интерфейсов"
+  }
+},
+{
+  "model": "empapp.jobtitle",
+  "pk": "9",
+  "fields": {
+    "title": "Главный дизайнер"
+  }
+}
+]

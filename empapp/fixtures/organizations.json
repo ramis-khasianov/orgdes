@@ -1,0 +1,13 @@
+[
+{
+  "model": "empapp.organization",
+  "pk": "1",
+  "fields": {
+    "title": "ООО Оргдез",
+    "short_title": "Оргдез",
+    "group_name": "ЦО",
+    "created_date": "2021-11-13T17:34:58.389Z",
+    "updated_date": "2021-11-13T17:38:55.653Z"
+  }
+}
+]
