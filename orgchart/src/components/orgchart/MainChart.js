@@ -15,11 +15,13 @@ class MainOrgchart extends Component {
 
     componentDidMount() {
         this.chart = new OrgChart(this.divRef.current , {
+            template: 'rony',
             nodes: this.props.nodes,
 
             nodeBinding: {
                 field_0: "name",
-                field_1: "title"
+                field_1: "title",
+                img_0: "img"
             }
         });
     }

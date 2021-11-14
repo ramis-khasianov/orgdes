@@ -57,6 +57,10 @@ class StaffPosition(models.Model):
         if self.manager:
             return self.manager.employees.first().person
 
+    def get_current_manager_employee_guid(self):
+        if self.manager:
+            return self.manager.employees.first().guid
+
 
 class Person(models.Model):
     """Физические лица"""

@@ -27,15 +27,16 @@ class VacancySerializer(serializers.ModelSerializer):
 
 class OrgChartSerializer(serializers.ModelSerializer):
     """Основной сериалайзер, который принимается фронтом"""
-    id = serializers.CharField(source='guid')
-    pid = serializers.CharField(source='manager.guid', read_only=True)
     department = serializers.CharField(source='department.title', read_only=True)
     job_title = serializers.CharField(source='job_title.title', read_only=True)
     fte_count = serializers.FloatField()
+    manager_guid = serializers.CharField(source='manager.guid', read_only=True)
+    manager_employee_guid = serializers.CharField(source='get_current_manager_employee_guid')
     manager_name = serializers.CharField(source='get_current_manager_name')
     employees = EmployeeSerializer(many=True)
     vacancies = VacancySerializer(many=True)
 
     class Meta:
         model = StaffPosition
-        fields = ['id', 'pid', 'title', 'department', 'job_title', 'fte_count', 'manager_name', 'employees', 'vacancies']
+        fields = ['guid', 'title', 'department', 'job_title', 'fte_count',
+                  'manager_guid', 'manager_employee_guid', 'manager_name', 'employees', 'vacancies']
