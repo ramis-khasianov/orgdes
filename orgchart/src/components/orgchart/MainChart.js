@@ -15,7 +15,44 @@ class MainOrgchart extends Component {
 
     componentDidMount() {
         this.chart = new OrgChart(this.divRef.current , {
-            template: 'rony',
+            template: "olivia",
+
+            editForm: {
+                generateElementsFromFields: false,
+                elements: [
+                    { type: 'textbox', label: 'ФИО', binding: 'fullName'},
+                    { type: 'textbox', label: 'Должность', binding: 'jobTitle'},
+                    { type: 'textbox', label: 'Департамент', binding: 'department'},
+                    { type: 'textbox', label: 'Ставка', binding: 'employmentRate'},
+                    { type: 'date', label: 'Дата приема', binding: 'hireDate'},
+                    { type: 'date', label: 'Дата увольнения', binding: 'exitDate'},
+                    { type: 'date', label: 'Согласовано', binding: 'vacancyApprovedDate'},
+                ]
+            } ,
+
+            enableSearch: true,
+            enableDragDrop: true,
+            menu: {
+                pdf: { text: "Export PDF" },
+                png: { text: "Export PNG" },
+                svg: { text: "Export SVG" },
+                csv: { text: "Export CSV" }
+            },
+            mouseScrool: OrgChart.action.scroll,
+            layout: OrgChart.treeRightOffset,
+            align: OrgChart.ORIENTATION,
+            toolbar: {
+                layout: true,
+                zoom: true,
+                fit: true,
+                expandAll: true
+            },
+            nodeMenu: {
+                details: { text: "Details" },
+                edit: { text: "Edit" },
+                add: { text: "Add" },
+                remove: { text: "Remove" }
+            },
             nodes: this.props.nodes,
 
             nodeBinding: {
@@ -23,6 +60,10 @@ class MainOrgchart extends Component {
                 field_1: "title",
                 img_0: "img"
             }
+        });
+
+        this.chart.on('init', function(sender){
+            sender.editUI.show(1);
         });
     }
 

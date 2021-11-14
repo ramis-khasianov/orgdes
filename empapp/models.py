@@ -120,7 +120,7 @@ class Employee(models.Model):
     exit_date = models.DateField(null=True, blank=True)
     is_long_absence = models.IntegerField(default=0)
     long_absence_type = models.CharField(max_length=50, null=True, blank=True)
-    vacancy_approved_date = models.DateTimeField(null=True)
+    vacancy_approved_date = models.DateTimeField(null=True, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -144,6 +144,10 @@ class Employee(models.Model):
         if self.person:
             return f'{base_url}{self.person.photo}'
         return f'{base_url}profile_placeholder.jpg'
+
+    def get_vacancy_approved_date(self):
+        if self.vacancy_approved_date:
+            return self.vacancy_approved_date.date()
 
     class Meta:
         ordering = ('staff_position__department', 'id')

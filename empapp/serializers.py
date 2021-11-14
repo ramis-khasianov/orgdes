@@ -15,6 +15,7 @@ class OrgChartSerializer(serializers.ModelSerializer):
     job_title = serializers.CharField(source='staff_position.job_title.title', read_only=True)
     manager_id = serializers.IntegerField(source='staff_position.manager.get_current_employee_id', read_only=True)
     manager_name = serializers.CharField(source='staff_position.manager.get_current_employee_name', read_only=True)
+    vacancy_approved_date = serializers.DateField(source='get_vacancy_approved_date')
 
     class Meta:
         model = Employee

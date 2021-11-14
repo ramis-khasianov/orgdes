@@ -11,38 +11,6 @@ const App = () => {
     const [isLoading, setLoading] = useState(true);
     const [employees, setEmployees] = useState();
 
-    const prepOrgchart = (apiResults) => {
-        let orgchartData = []
-
-        for (let i = 0; i < apiResults.length; i++) {
-            let staffPosition = apiResults[i]
-
-            if (staffPosition.employees.length > 0) {
-                let employees = apiResults[i].employees
-
-                for (let e = 0; e < apiResults[i].employees.length; e++) {
-                    console.log(staffPosition.managerGuid)
-                    let pid = '0'
-                    if (staffPosition.managerGuid != null) {
-                        pid = `${staffPosition.managerGuid}_${staffPosition.managerEmployeeGuid}`
-                    }
-
-                    let orgchartEmployee = {
-                        'id': `${staffPosition.guid}_${employees[e].guid}`,
-                        'pid': pid,
-                        'title': `${staffPosition.title}`,
-                        'img': `${API_ROOT}media/${employees[e].img}`
-                    }
-                    orgchartData.push(orgchartEmployee)
-                }
-            }
-        }
-
-        console.log(orgchartData)
-        return orgchartData
-    }
-
-
     useEffect(() => {
         const headers = {'Content-Type': 'application/json'}
         axios
