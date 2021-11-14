@@ -14,8 +14,12 @@ class MainOrgchart extends Component {
     }
 
     componentDidMount() {
+        OrgChart.templates.uc = Object.assign({}, OrgChart.templates.mery);
+        OrgChart.templates.uc.payroll = '<text style="font-size: 12px;" fill="#ffffff" x="5" y="65">ФОТ: {val}</text>';
+        OrgChart.templates.uc.fte = '<text style="font-size: 14px;" fill="#ffffff" x="162" y="66">{val} FTE</text>';
+
         this.chart = new OrgChart(this.divRef.current , {
-            template: "olivia",
+            template: "uc",
 
             editForm: {
                 generateElementsFromFields: false,
@@ -27,6 +31,9 @@ class MainOrgchart extends Component {
                     { type: 'date', label: 'Дата приема', binding: 'hireDate'},
                     { type: 'date', label: 'Дата увольнения', binding: 'exitDate'},
                     { type: 'date', label: 'Согласовано', binding: 'vacancyApprovedDate'},
+                    { type: 'textbox', label: 'Оклад', binding: 'salary'},
+                    { type: 'textbox', label: 'Условия бонуса', binding: 'bonusDescription'},
+                    { type: 'textbox', label: 'ФОТ в месяц', binding: 'totalPayroll'},
                 ]
             } ,
 
@@ -58,7 +65,9 @@ class MainOrgchart extends Component {
             nodeBinding: {
                 field_0: "name",
                 field_1: "title",
-                img_0: "img"
+                img_0: "img",
+                fte: "allSubordinatesFte",
+                payroll: "allSubordinatesPayroll"
             }
         });
 

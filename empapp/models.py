@@ -198,7 +198,7 @@ class Employee(models.Model):
     def get_name(self):
         if self.person:
             return f'{self.person.last_name} {self.person.first_name}'
-        return f'Вакансия: {self.staff_position.title}'
+        return f'Вакансия'
 
     def get_full_name(self):
         if self.person:
