@@ -3,7 +3,7 @@ from django.db import models
 
 class Organization(models.Model):
     """Организация, Юридическое лицо"""
-    guid = models.CharField(max_length=50, primary_key=True)
+    guid = models.CharField(max_length=50, null=True, blank=True)
     title = models.CharField(max_length=150)
     short_title = models.CharField(max_length=30)
     group_name = models.CharField(max_length=30)
@@ -16,7 +16,7 @@ class Organization(models.Model):
 
 class Department(models.Model):
     """Подразделения с иерархией"""
-    guid = models.CharField(max_length=50, primary_key=True)
+    guid = models.CharField(max_length=50, null=True, blank=True)
     title = models.CharField(max_length=150)
     parent_department = models.ForeignKey('self', related_name='subdepartments', on_delete=models.PROTECT,
                                           null=True, blank=True)
@@ -39,7 +39,7 @@ class JobTitle(models.Model):
 
 class StaffPosition(models.Model):
     """Штатные позиции"""
-    guid = models.CharField(max_length=50, primary_key=True)
+    guid = models.CharField(max_length=50, null=True, blank=True)
     title = models.CharField(max_length=150)
     department = models.ForeignKey(Department, on_delete=models.PROTECT)
     job_title = models.ForeignKey(JobTitle, on_delete=models.PROTECT)
@@ -53,16 +53,16 @@ class StaffPosition(models.Model):
     def __str__(self):
         return f'{self.department} // {self.job_title}'
 
-    def get_current_employee_guid(self):
+    def get_current_employee_id(self):
         employees = self.employees.all()
         records_count = employees.count()
         if records_count == 0:
-            guid = ''
+            id = 0
         elif records_count == 1:
-            guid = employees.first().guid
+            id = employees.first().id
         else:
-            guid = f'{employees.first().guid}, {records_count - 1}+'
-        return guid
+            id = f'{employees.first().id}, {records_count - 1}+'
+        return id
 
     def get_current_employee_name(self):
         employees = self.employees.all()
@@ -86,7 +86,7 @@ class Person(models.Model):
         (FEMALE, 'Ж')
     )
 
-    guid = models.CharField(max_length=50, primary_key=True)
+    guid = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=150)
     first_name = models.CharField(max_length=150)
     middle_name = models.CharField(max_length=150)
@@ -105,7 +105,7 @@ class Person(models.Model):
 
 class Employee(models.Model):
     """Сотрудники и вакансии"""
-    guid = models.CharField(max_length=50, primary_key=True)
+    guid = models.CharField(max_length=50, null=True, blank=True)
     staff_position = models.ForeignKey(StaffPosition, related_name='employees', on_delete=models.PROTECT)
     employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
     is_vacancy = models.IntegerField(default=0)
