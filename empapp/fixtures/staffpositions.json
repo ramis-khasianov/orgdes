@@ -1,10 +1,11 @@
 [
 {
   "model": "empapp.staffposition",
-  "pk": "1",
+  "pk": 1,
   "fields": {
+    "guid": null,
     "title": "Директор по продукту",
-    "department": "1",
+    "department": 1,
     "job_title": "1",
     "manager": null,
     "fte_count": "1.00",
@@ -15,110 +16,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "10",
+  "pk": 2,
   "fields": {
-    "title": "Методолог",
-    "department": "3",
-    "job_title": "12",
-    "manager": "6",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-13T19:09:01Z",
-    "created_date": "2021-11-13T19:09:03.243Z",
-    "updated_date": "2021-11-13T19:09:03.243Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "11",
-  "fields": {
-    "title": "Главный дизайнер",
-    "department": "4",
-    "job_title": "9",
-    "manager": "1",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-13T19:10:10Z",
-    "created_date": "2021-11-13T19:10:19.731Z",
-    "updated_date": "2021-11-13T19:10:19.731Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "12",
-  "fields": {
-    "title": "Дизайнер интерфейсов",
-    "department": "4",
-    "job_title": "8",
-    "manager": "11",
-    "fte_count": "2.00",
-    "approved_date": "2021-11-13T19:10:53Z",
-    "created_date": "2021-11-13T19:10:56.735Z",
-    "updated_date": "2021-11-13T19:10:56.735Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "13",
-  "fields": {
-    "title": "Младший дизайнер интерфейсов",
-    "department": "4",
-    "job_title": "11",
-    "manager": "11",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-13T19:11:20Z",
-    "created_date": "2021-11-13T19:11:23.284Z",
-    "updated_date": "2021-11-13T19:11:23.284Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "14",
-  "fields": {
-    "title": "Менеджер продуктов рекрутмента",
-    "department": "1",
-    "job_title": "2",
-    "manager": "1",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-14T09:12:02Z",
-    "created_date": "2021-11-14T09:12:06.626Z",
-    "updated_date": "2021-11-14T09:12:06.626Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "15",
-  "fields": {
-    "title": "Аналитик",
-    "department": "3",
-    "job_title": "7",
-    "manager": "6",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-14T09:12:40Z",
-    "created_date": "2021-11-14T09:12:48.341Z",
-    "updated_date": "2021-11-14T09:12:48.341Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "16",
-  "fields": {
-    "title": "Менеджер проектов",
-    "department": "5",
-    "job_title": "4",
-    "manager": "3",
-    "fte_count": "1.00",
-    "approved_date": "2021-11-14T09:21:50Z",
-    "created_date": "2021-11-14T09:21:52.107Z",
-    "updated_date": "2021-11-14T09:22:37.594Z"
-  }
-},
-{
-  "model": "empapp.staffposition",
-  "pk": "2",
-  "fields": {
+    "guid": null,
     "title": "Менеджер продуктов организационного дизайна",
-    "department": "2",
+    "department": 2,
     "job_title": "3",
-    "manager": "1",
+    "manager": 1,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:01:25Z",
     "created_date": "2021-11-13T19:01:27.378Z",
@@ -127,12 +31,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "3",
+  "pk": 3,
   "fields": {
+    "guid": null,
     "title": "Менеджер продуктов оптимизации бизнес-процессов",
-    "department": "2",
+    "department": 2,
     "job_title": "2",
-    "manager": "1",
+    "manager": 1,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:02:01Z",
     "created_date": "2021-11-13T19:02:02.466Z",
@@ -141,12 +46,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "4",
+  "pk": 4,
   "fields": {
+    "guid": null,
     "title": "Менеджер проектов",
-    "department": "5",
+    "department": 5,
     "job_title": "4",
-    "manager": "2",
+    "manager": 2,
     "fte_count": "2.00",
     "approved_date": "2021-11-13T19:02:37Z",
     "created_date": "2021-11-13T19:03:18.584Z",
@@ -155,12 +61,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "5",
+  "pk": 5,
   "fields": {
+    "guid": null,
     "title": "Младший менеджер проектов",
-    "department": "5",
+    "department": 5,
     "job_title": "5",
-    "manager": "3",
+    "manager": 3,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:03:35Z",
     "created_date": "2021-11-13T19:03:49.375Z",
@@ -169,12 +76,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "6",
+  "pk": 6,
   "fields": {
+    "guid": null,
     "title": "Руководитель отдела аналитики",
-    "department": "3",
+    "department": 3,
     "job_title": "10",
-    "manager": "1",
+    "manager": 1,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:06:18Z",
     "created_date": "2021-11-13T19:06:22.281Z",
@@ -183,12 +91,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "7",
+  "pk": 7,
   "fields": {
+    "guid": null,
     "title": "Старший продуктовый аналитик",
-    "department": "3",
+    "department": 3,
     "job_title": "6",
-    "manager": "6",
+    "manager": 6,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:06:52Z",
     "created_date": "2021-11-13T19:06:55.521Z",
@@ -197,12 +106,13 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "8",
+  "pk": 8,
   "fields": {
+    "guid": null,
     "title": "Аналитик",
-    "department": "3",
+    "department": 3,
     "job_title": "7",
-    "manager": "6",
+    "manager": 6,
     "fte_count": "2.00",
     "approved_date": "2021-11-13T19:07:13Z",
     "created_date": "2021-11-13T19:07:49.600Z",
@@ -211,16 +121,122 @@
 },
 {
   "model": "empapp.staffposition",
-  "pk": "9",
+  "pk": 9,
   "fields": {
+    "guid": null,
     "title": "Аналитик",
-    "department": "3",
+    "department": 3,
     "job_title": "7",
-    "manager": "6",
+    "manager": 6,
     "fte_count": "1.00",
     "approved_date": "2021-11-13T19:08:10Z",
     "created_date": "2021-11-13T19:08:26.467Z",
     "updated_date": "2021-11-13T19:08:26.467Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 10,
+  "fields": {
+    "guid": null,
+    "title": "Методолог",
+    "department": 3,
+    "job_title": "12",
+    "manager": 6,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-13T19:09:01Z",
+    "created_date": "2021-11-13T19:09:03.243Z",
+    "updated_date": "2021-11-13T19:09:03.243Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 11,
+  "fields": {
+    "guid": null,
+    "title": "Главный дизайнер",
+    "department": 4,
+    "job_title": "9",
+    "manager": 1,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-13T19:10:10Z",
+    "created_date": "2021-11-13T19:10:19.731Z",
+    "updated_date": "2021-11-13T19:10:19.731Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 12,
+  "fields": {
+    "guid": null,
+    "title": "Дизайнер интерфейсов",
+    "department": 4,
+    "job_title": "8",
+    "manager": 11,
+    "fte_count": "2.00",
+    "approved_date": "2021-11-13T19:10:53Z",
+    "created_date": "2021-11-13T19:10:56.735Z",
+    "updated_date": "2021-11-13T19:10:56.735Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 13,
+  "fields": {
+    "guid": null,
+    "title": "Младший дизайнер интерфейсов",
+    "department": 4,
+    "job_title": "11",
+    "manager": 11,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-13T19:11:20Z",
+    "created_date": "2021-11-13T19:11:23.284Z",
+    "updated_date": "2021-11-13T19:11:23.284Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 14,
+  "fields": {
+    "guid": null,
+    "title": "Менеджер продуктов рекрутмента",
+    "department": 1,
+    "job_title": "2",
+    "manager": 1,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:12:02Z",
+    "created_date": "2021-11-14T09:12:06.626Z",
+    "updated_date": "2021-11-14T09:12:06.626Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 15,
+  "fields": {
+    "guid": null,
+    "title": "Аналитик",
+    "department": 3,
+    "job_title": "7",
+    "manager": 6,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:12:40Z",
+    "created_date": "2021-11-14T09:12:48.341Z",
+    "updated_date": "2021-11-14T09:12:48.341Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": 16,
+  "fields": {
+    "guid": null,
+    "title": "Менеджер проектов",
+    "department": 5,
+    "job_title": "4",
+    "manager": 3,
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:21:50Z",
+    "created_date": "2021-11-14T09:21:52.107Z",
+    "updated_date": "2021-11-14T09:22:37.594Z"
   }
 }
 ]

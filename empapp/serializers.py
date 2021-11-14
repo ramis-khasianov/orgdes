@@ -8,14 +8,13 @@ class OrgChartSerializer(serializers.ModelSerializer):
     pid = serializers.IntegerField(source='staff_position.manager.get_current_employee_id', read_only=True)
     name = serializers.CharField(source='get_name')
     title = serializers.CharField(source='staff_position.title')
-    img = serializers.URLField(source='person.photo', read_only=True)
+    img = serializers.URLField(source='get_photo_url')
     full_name = serializers.CharField(source='get_full_name')
 
     department = serializers.CharField(source='staff_position.department.title', read_only=True)
     job_title = serializers.CharField(source='staff_position.job_title.title', read_only=True)
     manager_id = serializers.IntegerField(source='staff_position.manager.get_current_employee_id', read_only=True)
     manager_name = serializers.CharField(source='staff_position.manager.get_current_employee_name', read_only=True)
-
 
     class Meta:
         model = Employee

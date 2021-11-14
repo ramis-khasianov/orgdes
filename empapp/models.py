@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Sum
 
 
 class Organization(models.Model):
@@ -50,9 +51,6 @@ class StaffPosition(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return f'{self.department} // {self.job_title}'
-
     def get_current_employee_id(self):
         employees = self.employees.all()
         records_count = employees.count()
@@ -74,6 +72,14 @@ class StaffPosition(models.Model):
         else:
             name = f'{employees.first().get_name()} и еще {records_count - 1}'
         return name
+
+    def get_current_fte(self):
+        if self.employees.count() > 0:
+            return self.employees.aggregate(Sum('employment_rate'))['employment_rate__sum']
+        return 0
+
+    def __str__(self):
+        return f'{self.get_current_fte()}/{self.fte_count}, {self.department} // {self.job_title}: {self.get_current_employee_name()}'
 
 
 class Person(models.Model):
@@ -109,7 +115,7 @@ class Employee(models.Model):
     staff_position = models.ForeignKey(StaffPosition, related_name='employees', on_delete=models.PROTECT)
     employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
     is_vacancy = models.IntegerField(default=0)
-    person = models.ForeignKey(Person, on_delete=models.PROTECT, null=True)
+    person = models.ForeignKey(Person, on_delete=models.PROTECT, null=True, blank=True)
     hire_date = models.DateField(null=True, blank=True)
     exit_date = models.DateField(null=True, blank=True)
     is_long_absence = models.IntegerField(default=0)
@@ -132,4 +138,13 @@ class Employee(models.Model):
         if self.person:
             return f'{self.person.last_name} {self.person.first_name} {self.person.middle_name}'
         return f'Вакансия: {self.staff_position.title}'
+
+    def get_photo_url(self):
+        base_url = 'http://127.0.0.1:8000/media/'
+        if self.person:
+            return f'{base_url}{self.person.photo}'
+        return f'{base_url}profile_placeholder.jpg'
+
+    class Meta:
+        ordering = ('staff_position__department', 'id')
 

@@ -48,8 +48,7 @@ const App = () => {
         axios
             .get(getUrl('api/orgchart/'), {headers})
             .then(response => {
-                const orgchartData = prepOrgchart(response.data.results);
-                setEmployees(orgchartData);
+                setEmployees(response.data.results);
                 setLoading(false)
             })
             .catch((error) => console.log(error));

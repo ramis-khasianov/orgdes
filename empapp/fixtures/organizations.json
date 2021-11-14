@@ -1,8 +1,9 @@
 [
 {
   "model": "empapp.organization",
-  "pk": "1",
+  "pk": 1,
   "fields": {
+    "guid": null,
     "title": "ООО Оргдез",
     "short_title": "Оргдез",
     "group_name": "ЦО",
