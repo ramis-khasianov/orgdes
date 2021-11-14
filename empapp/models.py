@@ -53,6 +53,10 @@ class StaffPosition(models.Model):
     def __str__(self):
         return f'{self.department} // {self.job_title}'
 
+    def get_current_manager_name(self):
+        if self.manager:
+            return self.manager.employees.first().person
+
 
 class Person(models.Model):
     """Физические лица"""
@@ -84,10 +88,13 @@ class Person(models.Model):
 class Employee(models.Model):
     """Сотрудники"""
     guid = models.CharField(max_length=50, primary_key=True)
-    staff_position = models.ForeignKey(StaffPosition, on_delete=models.PROTECT)
+    staff_position = models.ForeignKey(StaffPosition, related_name='employees', on_delete=models.PROTECT)
     person = models.ForeignKey(Person, on_delete=models.PROTECT)
     hire_date = models.DateField()
     exit_date = models.DateField(null=True, blank=True)
+    employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
+    is_long_absence = models.IntegerField(default=0)
+    long_absence_type = models.CharField(max_length=50, null=True, blank=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
