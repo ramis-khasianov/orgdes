@@ -71,6 +71,48 @@
 },
 {
   "model": "empapp.staffposition",
+  "pk": "14",
+  "fields": {
+    "title": "Менеджер продуктов рекрутмента",
+    "department": "1",
+    "job_title": "2",
+    "manager": "1",
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:12:02Z",
+    "created_date": "2021-11-14T09:12:06.626Z",
+    "updated_date": "2021-11-14T09:12:06.626Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": "15",
+  "fields": {
+    "title": "Аналитик",
+    "department": "3",
+    "job_title": "7",
+    "manager": "6",
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:12:40Z",
+    "created_date": "2021-11-14T09:12:48.341Z",
+    "updated_date": "2021-11-14T09:12:48.341Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
+  "pk": "16",
+  "fields": {
+    "title": "Менеджер проектов",
+    "department": "5",
+    "job_title": "4",
+    "manager": "3",
+    "fte_count": "1.00",
+    "approved_date": "2021-11-14T09:21:50Z",
+    "created_date": "2021-11-14T09:21:52.107Z",
+    "updated_date": "2021-11-14T09:22:37.594Z"
+  }
+},
+{
+  "model": "empapp.staffposition",
   "pk": "2",
   "fields": {
     "title": "Менеджер продуктов организационного дизайна",

@@ -7,6 +7,9 @@
     "person": "1",
     "hire_date": "2021-09-16",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:16:47.008Z",
     "updated_date": "2021-11-13T19:16:47.009Z"
   }
@@ -19,6 +22,9 @@
     "person": "10",
     "hire_date": "2021-12-09",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:23:53.321Z",
     "updated_date": "2021-11-13T19:23:53.321Z"
   }
@@ -31,6 +37,9 @@
     "person": "11",
     "hire_date": "2020-06-25",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:24:24.631Z",
     "updated_date": "2021-11-13T19:24:24.631Z"
   }
@@ -43,6 +52,9 @@
     "person": "12",
     "hire_date": "2021-12-16",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:24:35.791Z",
     "updated_date": "2021-11-13T19:24:35.791Z"
   }
@@ -55,6 +67,9 @@
     "person": "13",
     "hire_date": "2021-06-05",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:25:19.374Z",
     "updated_date": "2021-11-13T19:25:19.374Z"
   }
@@ -67,6 +82,9 @@
     "person": "14",
     "hire_date": "2020-05-08",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:25:37.307Z",
     "updated_date": "2021-11-13T19:25:37.307Z"
   }
@@ -79,6 +97,9 @@
     "person": "15",
     "hire_date": "2021-10-02",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:25:53.060Z",
     "updated_date": "2021-11-13T19:25:53.060Z"
   }
@@ -91,6 +112,9 @@
     "person": "16",
     "hire_date": "2021-04-28",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:26:04.690Z",
     "updated_date": "2021-11-13T19:26:04.690Z"
   }
@@ -103,6 +127,9 @@
     "person": "2",
     "hire_date": "2021-12-03",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:20:06.574Z",
     "updated_date": "2021-11-13T19:20:06.574Z"
   }
@@ -115,6 +142,9 @@
     "person": "3",
     "hire_date": "2020-09-12",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:20:47.132Z",
     "updated_date": "2021-11-13T19:20:47.132Z"
   }
@@ -127,6 +157,9 @@
     "person": "4",
     "hire_date": "2020-05-08",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:21:02.261Z",
     "updated_date": "2021-11-13T19:21:02.261Z"
   }
@@ -135,12 +168,15 @@
   "model": "empapp.employee",
   "pk": "5",
   "fields": {
-    "staff_position": "4",
+    "staff_position": "16",
     "person": "5",
     "hire_date": "2021-04-21",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:21:21.454Z",
-    "updated_date": "2021-11-13T19:21:21.454Z"
+    "updated_date": "2021-11-14T09:23:30.309Z"
   }
 },
 {
@@ -151,6 +187,9 @@
     "person": "6",
     "hire_date": "2021-01-26",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:21:53.521Z",
     "updated_date": "2021-11-13T19:21:53.521Z"
   }
@@ -163,6 +202,9 @@
     "person": "7",
     "hire_date": "2021-06-25",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:23:05.271Z",
     "updated_date": "2021-11-13T19:23:05.271Z"
   }
@@ -175,6 +217,9 @@
     "person": "8",
     "hire_date": "2020-12-02",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:23:19.468Z",
     "updated_date": "2021-11-13T19:23:19.468Z"
   }
@@ -187,6 +232,9 @@
     "person": "9",
     "hire_date": "2020-07-16",
     "exit_date": null,
+    "employment_rate": "1.00",
+    "is_long_absence": 0,
+    "long_absence_type": null,
     "created_date": "2021-11-13T19:23:34.229Z",
     "updated_date": "2021-11-13T19:23:34.229Z"
   }
