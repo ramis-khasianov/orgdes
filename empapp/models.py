@@ -115,5 +115,8 @@ class Vacancy(models.Model):
     def __str__(self):
         return f'Вакансия: {self.staff_position.title}'
 
+    def get_vacancy_name(self):
+        return f'Вакансия: {self.staff_position.title}'
+
     class Meta:
         verbose_name_plural = "vacancies"

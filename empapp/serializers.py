@@ -16,12 +16,13 @@ class EmployeeSerializer(serializers.ModelSerializer):
 
 
 class VacancySerializer(serializers.ModelSerializer):
-    """Поддерживающий сериалайзер по сотрудникам для метода ниже"""
+    """Поддерживающий сериалайзер по вакансиям для метода ниже"""
+    title = serializers.CharField(source='get_vacancy_name')
     employment_rate = serializers.FloatField()
 
     class Meta:
         model = Vacancy
-        fields = '__all__'
+        fields = ['guid', 'title', 'employment_rate', 'is_in_search', 'approved_date']
 
 
 class OrgChartSerializer(serializers.ModelSerializer):
