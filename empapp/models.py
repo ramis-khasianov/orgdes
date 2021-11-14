@@ -100,3 +100,20 @@ class Employee(models.Model):
 
     def __str__(self):
         return f'{self.person.last_name} {self.person.first_name}'
+
+
+class Vacancy(models.Model):
+    """Вакансии"""
+    guid = models.CharField(max_length=50, primary_key=True)
+    staff_position = models.ForeignKey(StaffPosition, related_name='vacancies', on_delete=models.PROTECT)
+    employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
+    approved_date = models.DateTimeField(null=True)
+    is_in_search = models.IntegerField(default=0)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'Вакансия: {self.staff_position.title}'
+
+    class Meta:
+        verbose_name_plural = "vacancies"

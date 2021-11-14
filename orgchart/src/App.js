@@ -11,10 +11,11 @@ const App = () => {
     const [isLoading, setLoading] = useState(true);
     const [employees, setEmployees] = useState();
 
+
     useEffect(() => {
         const headers = {'Content-Type': 'application/json'}
         axios
-            .get(getUrl('employees/'), {headers})
+            .get(getUrl('orgchart/'), {headers})
             .then(response => {
                 setEmployees(response.data.results);
                 setLoading(false)

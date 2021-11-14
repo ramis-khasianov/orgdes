@@ -15,7 +15,6 @@ class MainOrgchart extends Component {
 
     componentDidMount() {
         this.chart = new OrgChart(this.divRef.current , {
-            template: 'rony',
             nodes: this.props.nodes,
 
             nodeBinding: {

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from empapp.models import Organization, Department, JobTitle, StaffPosition, Person, Employee
+from empapp.models import Organization, Department, JobTitle, StaffPosition, Person, Employee, Vacancy
 
 
 class OrganizationAdmin(admin.ModelAdmin):
@@ -19,7 +19,11 @@ class PersonAdmin(admin.ModelAdmin):
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('guid', 'person', 'staff_position', 'hire_date', 'exit_date', 'created_date', 'updated_date')
+    list_display = ('guid', 'person', 'staff_position', 'employment_rate', 'hire_date', 'exit_date', 'created_date', 'updated_date')
+
+
+class VacancyAdmin(admin.ModelAdmin):
+    list_display = ('guid', 'staff_position', 'employment_rate', 'approved_date', 'is_in_search')
 
 
 admin.site.register(Organization, OrganizationAdmin)
@@ -28,3 +32,4 @@ admin.site.register(JobTitle)
 admin.site.register(StaffPosition, StaffPositionAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Employee, EmployeeAdmin)
+admin.site.register(Vacancy, VacancyAdmin)
