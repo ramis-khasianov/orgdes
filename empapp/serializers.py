@@ -1,42 +1,26 @@
 from rest_framework import serializers
 
-from empapp.models import StaffPosition, Employee, Vacancy
-
-
-class EmployeeSerializer(serializers.ModelSerializer):
-    """Поддерживающий сериалайзер по сотрудникам для метода ниже"""
-    person_name = serializers.CharField(source='person')
-    employment_rate = serializers.FloatField()
-    img = serializers.URLField(source='person.photo', read_only=True)
-
-    class Meta:
-        model = Employee
-        fields = ['guid', 'img', 'person_name', 'employment_rate', 'is_long_absence',
-                  'hire_date', 'exit_date']
-
-
-class VacancySerializer(serializers.ModelSerializer):
-    """Поддерживающий сериалайзер по вакансиям для метода ниже"""
-    title = serializers.CharField(source='get_vacancy_name')
-    employment_rate = serializers.FloatField()
-
-    class Meta:
-        model = Vacancy
-        fields = ['guid', 'title', 'employment_rate', 'is_in_search', 'approved_date']
+from empapp.models import Employee
 
 
 class OrgChartSerializer(serializers.ModelSerializer):
     """Основной сериалайзер, который принимается фронтом"""
-    department = serializers.CharField(source='department.title', read_only=True)
-    job_title = serializers.CharField(source='job_title.title', read_only=True)
-    fte_count = serializers.FloatField()
-    manager_guid = serializers.CharField(source='manager.guid', read_only=True)
-    manager_employee_guid = serializers.CharField(source='get_current_manager_employee_guid')
-    manager_name = serializers.CharField(source='get_current_manager_name')
-    employees = EmployeeSerializer(many=True)
-    vacancies = VacancySerializer(many=True)
+    id = serializers.CharField(source='guid')
+    pid = serializers.CharField(source='staff_position.manager.get_current_employee_guid', read_only=True)
+    name = serializers.CharField(source='get_name')
+    title = serializers.CharField(source='staff_position.title')
+    img = serializers.URLField(source='person.photo', read_only=True)
+    full_name = serializers.CharField(source='get_full_name')
+
+    department = serializers.CharField(source='staff_position.department.title', read_only=True)
+    job_title = serializers.CharField(source='staff_position.job_title.title', read_only=True)
+    manager_guid = serializers.CharField(source='staff_position.manager.get_current_employee_guid', read_only=True)
+    manager_name = serializers.CharField(source='staff_position.manager.get_current_employee_name', read_only=True)
+
 
     class Meta:
-        model = StaffPosition
-        fields = ['guid', 'title', 'department', 'job_title', 'fte_count',
-                  'manager_guid', 'manager_employee_guid', 'manager_name', 'employees', 'vacancies']
+        model = Employee
+        fields = ['id', 'pid', 'name', 'title', 'img',
+                  'full_name', 'department', 'job_title', 'employment_rate',
+                  'manager_guid', 'manager_name', 'is_long_absence', 'hire_date', 'exit_date',
+                  'is_vacancy', 'vacancy_approved_date']

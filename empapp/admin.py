@@ -1,5 +1,5 @@
 from django.contrib import admin
-from empapp.models import Organization, Department, JobTitle, StaffPosition, Person, Employee, Vacancy
+from empapp.models import Organization, Department, JobTitle, StaffPosition, Person, Employee
 
 
 class OrganizationAdmin(admin.ModelAdmin):
@@ -32,4 +32,3 @@ admin.site.register(JobTitle)
 admin.site.register(StaffPosition, StaffPositionAdmin)
 admin.site.register(Person, PersonAdmin)
 admin.site.register(Employee, EmployeeAdmin)
-admin.site.register(Vacancy, VacancyAdmin)

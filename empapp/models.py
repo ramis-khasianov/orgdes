@@ -53,13 +53,27 @@ class StaffPosition(models.Model):
     def __str__(self):
         return f'{self.department} // {self.job_title}'
 
-    def get_current_manager_name(self):
-        if self.manager:
-            return self.manager.employees.first().person
+    def get_current_employee_guid(self):
+        employees = self.employees.all()
+        records_count = employees.count()
+        if records_count == 0:
+            guid = ''
+        elif records_count == 1:
+            guid = employees.first().guid
+        else:
+            guid = f'{employees.first().guid}, {records_count - 1}+'
+        return guid
 
-    def get_current_manager_employee_guid(self):
-        if self.manager:
-            return self.manager.employees.first().guid
+    def get_current_employee_name(self):
+        employees = self.employees.all()
+        records_count = employees.count()
+        if records_count == 0:
+            name = ''
+        elif records_count == 1:
+            name = employees.first().get_name()
+        else:
+            name = f'{employees.first().get_name()} и еще {records_count - 1}'
+        return name
 
 
 class Person(models.Model):
@@ -90,37 +104,32 @@ class Person(models.Model):
 
 
 class Employee(models.Model):
-    """Сотрудники"""
+    """Сотрудники и вакансии"""
     guid = models.CharField(max_length=50, primary_key=True)
     staff_position = models.ForeignKey(StaffPosition, related_name='employees', on_delete=models.PROTECT)
-    person = models.ForeignKey(Person, on_delete=models.PROTECT)
-    hire_date = models.DateField()
-    exit_date = models.DateField(null=True, blank=True)
     employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
+    is_vacancy = models.IntegerField(default=0)
+    person = models.ForeignKey(Person, on_delete=models.PROTECT, null=True)
+    hire_date = models.DateField(null=True, blank=True)
+    exit_date = models.DateField(null=True, blank=True)
     is_long_absence = models.IntegerField(default=0)
     long_absence_type = models.CharField(max_length=50, null=True, blank=True)
+    vacancy_approved_date = models.DateTimeField(null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.person.last_name} {self.person.first_name}'
-
-
-class Vacancy(models.Model):
-    """Вакансии"""
-    guid = models.CharField(max_length=50, primary_key=True)
-    staff_position = models.ForeignKey(StaffPosition, related_name='vacancies', on_delete=models.PROTECT)
-    employment_rate = models.DecimalField(max_digits=3, decimal_places=2, default=1.00)
-    approved_date = models.DateTimeField(null=True)
-    is_in_search = models.IntegerField(default=0)
-    created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
+        if self.person:
+            return f'{self.person.last_name} {self.person.first_name}'
         return f'Вакансия: {self.staff_position.title}'
 
-    def get_vacancy_name(self):
+    def get_name(self):
+        if self.person:
+            return f'{self.person.last_name} {self.person.first_name}'
         return f'Вакансия: {self.staff_position.title}'
 
-    class Meta:
-        verbose_name_plural = "vacancies"
+    def get_full_name(self):
+        if self.person:
+            return f'{self.person.last_name} {self.person.first_name} {self.person.middle_name}'
+        return f'Вакансия: {self.staff_position.title}'
+
