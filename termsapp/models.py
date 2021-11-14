@@ -8,18 +8,33 @@ class SalaryTerms(models.Model):
     salary = models.DecimalField(max_digits=12, decimal_places=2)
 
     class Meta:
-        verbose_name_plural = "salary terms"
+        verbose_name_plural = 'salary terms'
 
     def __str__(self):
         return f'Оклад {self.employee}'
 
-    def get_annual_payroll(self):
-        total_payroll = 0
+    def get_bonus_sum(self):
+        bonus_sum = 0
         if self.bonus_terms.count() > 0:
             for bonus_term in self.bonus_terms.all():
-                total_payroll += bonus_term.get_monthly_bonus_sum()
-        total_payroll = total_payroll * 1.24  # Отчисления
+                bonus_sum += bonus_term.get_monthly_bonus_sum()
+        return bonus_sum
+
+    def get_total_monthly_payroll(self):
+        total_payroll = self.salary + self.get_bonus_sum()
+        total_payroll = float(total_payroll) * 1.24  # Отчисления
         return total_payroll
+
+    def get_bonus_description(self):
+        bonus_terms = self.bonus_terms.all()
+        records_count = bonus_terms.count()
+        if records_count == 0:
+            bonus_description = ''
+        elif records_count == 1:
+            bonus_description = f'{bonus_terms.first().get_bonus_description()}'
+        else:
+            bonus_description = ', '.join([x.get_bonus_description() for x in bonus_terms])
+        return bonus_description
 
 
 class BonusTerms(models.Model):
@@ -56,7 +71,7 @@ class BonusTerms(models.Model):
         return f'{self.salary_terms.employee}: {self.bonus_value}, {self.bonus_period}, {self.bonus_schema}'
 
     class Meta:
-        verbose_name_plural = "bonus terms"
+        verbose_name_plural = 'bonus terms'
 
     def get_monthly_bonus_sum(self):
         rates = {
@@ -74,3 +89,11 @@ class BonusTerms(models.Model):
         else:
             bonus_sum = self.bonus_value
         return bonus_sum
+
+    def get_bonus_description(self):
+        if self.bonus_schema == self.PERCENT:
+            return f'{self.bonus_value:%}, выплачивается раз в {self.get_bonus_period_display().lower()}'
+        elif self.bonus_schema == self.FLAT:
+            return f'{self.bonus_value:,}, раз в {self.get_bonus_period_display().lower()}'
+        else:
+            return f'Особая схема, в среднем {self.bonus_value:,} в месяц'
