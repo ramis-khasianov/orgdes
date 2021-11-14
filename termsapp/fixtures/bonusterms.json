@@ -1,0 +1,182 @@
+[
+{
+  "model": "termsapp.bonusterms",
+  "pk": 1,
+  "fields": {
+    "salary_terms": 1,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.50"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 2,
+  "fields": {
+    "salary_terms": 2,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.40"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 3,
+  "fields": {
+    "salary_terms": 3,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.40"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 4,
+  "fields": {
+    "salary_terms": 5,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.40"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 5,
+  "fields": {
+    "salary_terms": 6,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.20"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 6,
+  "fields": {
+    "salary_terms": 7,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.20"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 7,
+  "fields": {
+    "salary_terms": 8,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.20"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 8,
+  "fields": {
+    "salary_terms": 9,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.20"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 9,
+  "fields": {
+    "salary_terms": 10,
+    "bonus_schema": "flat",
+    "bonus_period": "quarterly",
+    "bonus_value": "20000.00"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 10,
+  "fields": {
+    "salary_terms": 11,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.20"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 11,
+  "fields": {
+    "salary_terms": 12,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.40"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 12,
+  "fields": {
+    "salary_terms": 13,
+    "bonus_schema": "flat",
+    "bonus_period": "quarterly",
+    "bonus_value": "20000.00"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 13,
+  "fields": {
+    "salary_terms": 14,
+    "bonus_schema": "flat",
+    "bonus_period": "quarterly",
+    "bonus_value": "20000.00"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 14,
+  "fields": {
+    "salary_terms": 15,
+    "bonus_schema": "percent",
+    "bonus_period": "quarterly",
+    "bonus_value": "0.30"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 15,
+  "fields": {
+    "salary_terms": 16,
+    "bonus_schema": "percent",
+    "bonus_period": "quarterly",
+    "bonus_value": "0.30"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 16,
+  "fields": {
+    "salary_terms": 17,
+    "bonus_schema": "percent",
+    "bonus_period": "quarterly",
+    "bonus_value": "0.30"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 17,
+  "fields": {
+    "salary_terms": 18,
+    "bonus_schema": "percent",
+    "bonus_period": "quarterly",
+    "bonus_value": "0.30"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 18,
+  "fields": {
+    "salary_terms": 4,
+    "bonus_schema": "percent",
+    "bonus_period": "annual",
+    "bonus_value": "0.40"
+  }
+}
+]

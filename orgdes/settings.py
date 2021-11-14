@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'userapp',
-    'empapp'
+    'empapp',
+    'termsapp'
 ]
 
 MIDDLEWARE = [
