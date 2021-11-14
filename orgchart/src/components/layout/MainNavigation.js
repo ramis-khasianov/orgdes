@@ -5,7 +5,7 @@ const MainNavigation = () => {
 
     return (
         <header className={classes.header}>
-            <div className={classes.logo}>Ural Talent Manager</div>
+            <div className={classes.logo}>Orgdes Talent Manager</div>
             <nav>
                 <ul>
                     <li>

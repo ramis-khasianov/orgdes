@@ -1,8 +1,9 @@
 [
 {
   "model": "empapp.person",
-  "pk": "1",
+  "pk": 1,
   "fields": {
+    "guid": null,
     "last_name": "Попов",
     "first_name": "Матвей",
     "middle_name": "Игоревич",
@@ -18,127 +19,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "10",
+  "pk": 2,
   "fields": {
-    "last_name": "Кузьмин",
-    "first_name": "Константин",
-    "middle_name": "Ильич",
-    "photo": "person_photos/10.jpeg",
-    "birth_date": "1980-06-25",
-    "gender": "M",
-    "social_hash": "10",
-    "login": "konstantin.kuzmin",
-    "email": "konstantin.kuzmin@orgdes.com",
-    "created_date": "2021-11-13T18:28:08.643Z",
-    "updated_date": "2021-11-13T18:28:08.643Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "11",
-  "fields": {
-    "last_name": "Белов",
-    "first_name": "Игорь",
-    "middle_name": "Андреевич",
-    "photo": "person_photos/11.jpeg",
-    "birth_date": "1996-12-02",
-    "gender": "M",
-    "social_hash": "11",
-    "login": "igor.belov",
-    "email": "igor.belov@orgdes.com",
-    "created_date": "2021-11-13T18:30:02.190Z",
-    "updated_date": "2021-11-13T18:30:02.191Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "12",
-  "fields": {
-    "last_name": "Фролов",
-    "first_name": "Артур",
-    "middle_name": "Владимирович",
-    "photo": "person_photos/12.jpeg",
-    "birth_date": "1994-12-09",
-    "gender": "M",
-    "social_hash": "12",
-    "login": "artur.frolov",
-    "email": "artur.frolov@orgdes.com",
-    "created_date": "2021-11-13T18:31:12.614Z",
-    "updated_date": "2021-11-13T18:31:12.614Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "13",
-  "fields": {
-    "last_name": "Смирнов",
-    "first_name": "Илья",
-    "middle_name": "Александрович",
-    "photo": "person_photos/13.jpeg",
-    "birth_date": "1994-05-19",
-    "gender": "M",
-    "social_hash": "13",
-    "login": "ilya.smirnov",
-    "email": "ilya.smirnov@orgdes.com",
-    "created_date": "2021-11-13T18:35:19.164Z",
-    "updated_date": "2021-11-13T18:35:19.164Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "14",
-  "fields": {
-    "last_name": "Бунина",
-    "first_name": "Клавдия",
-    "middle_name": "Никифоровна",
-    "photo": "person_photos/14.jpeg",
-    "birth_date": "1989-06-25",
-    "gender": "M",
-    "social_hash": "14",
-    "login": "klavdiya.bunina",
-    "email": "klavdiya.bunina@orgdes.com",
-    "created_date": "2021-11-13T18:36:48.177Z",
-    "updated_date": "2021-11-13T18:36:48.177Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "15",
-  "fields": {
-    "last_name": "Пажинская",
-    "first_name": "Вероника",
-    "middle_name": "Сергеевна",
-    "photo": "person_photos/15.jpeg",
-    "birth_date": "1997-12-16",
-    "gender": "W",
-    "social_hash": "15",
-    "login": "veronika.pazhinskaya",
-    "email": "veronika.pazhinskaya@orgdes.com",
-    "created_date": "2021-11-13T18:38:07.128Z",
-    "updated_date": "2021-11-13T18:38:07.128Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "16",
-  "fields": {
-    "last_name": "Успенская",
-    "first_name": "Анна",
-    "middle_name": "Юрьевна",
-    "photo": "person_photos/16.jpeg",
-    "birth_date": "1994-04-21",
-    "gender": "W",
-    "social_hash": "16",
-    "login": "anna.uspenskaya",
-    "email": "anna.uspenskaya@orgdes.com",
-    "created_date": "2021-11-13T18:40:01.972Z",
-    "updated_date": "2021-11-13T18:40:01.972Z"
-  }
-},
-{
-  "model": "empapp.person",
-  "pk": "2",
-  "fields": {
+    "guid": null,
     "last_name": "Петрова",
     "first_name": "Капитолина",
     "middle_name": "Ивановна",
@@ -154,8 +37,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "3",
+  "pk": 3,
   "fields": {
+    "guid": null,
     "last_name": "Козлов",
     "first_name": "Викентий",
     "middle_name": "Эдгарович",
@@ -171,8 +55,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "4",
+  "pk": 4,
   "fields": {
+    "guid": null,
     "last_name": "Федорова",
     "first_name": "Мальвина",
     "middle_name": "Артуровна",
@@ -188,8 +73,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "5",
+  "pk": 5,
   "fields": {
+    "guid": null,
     "last_name": "Комаров",
     "first_name": "Виктор",
     "middle_name": "Петрович",
@@ -205,8 +91,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "6",
+  "pk": 6,
   "fields": {
+    "guid": null,
     "last_name": "Антонов",
     "first_name": "Руслан",
     "middle_name": "Борисович",
@@ -222,8 +109,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "7",
+  "pk": 7,
   "fields": {
+    "guid": null,
     "last_name": "Попов",
     "first_name": "Георгий",
     "middle_name": "Вячеславович",
@@ -239,8 +127,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "8",
+  "pk": 8,
   "fields": {
+    "guid": null,
     "last_name": "Соловьев",
     "first_name": "Виктор",
     "middle_name": "Дмитриевич",
@@ -256,8 +145,9 @@
 },
 {
   "model": "empapp.person",
-  "pk": "9",
+  "pk": 9,
   "fields": {
+    "guid": null,
     "last_name": "Новикова",
     "first_name": "Антонина",
     "middle_name": "Никитична",
@@ -269,6 +159,132 @@
     "email": "antonina.nikitichna@orgdes.com",
     "created_date": "2021-11-13T18:26:19.627Z",
     "updated_date": "2021-11-13T18:26:19.627Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 10,
+  "fields": {
+    "guid": null,
+    "last_name": "Кузьмин",
+    "first_name": "Константин",
+    "middle_name": "Ильич",
+    "photo": "person_photos/10.jpeg",
+    "birth_date": "1980-06-25",
+    "gender": "M",
+    "social_hash": "10",
+    "login": "konstantin.kuzmin",
+    "email": "konstantin.kuzmin@orgdes.com",
+    "created_date": "2021-11-13T18:28:08.643Z",
+    "updated_date": "2021-11-13T18:28:08.643Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 11,
+  "fields": {
+    "guid": null,
+    "last_name": "Белов",
+    "first_name": "Игорь",
+    "middle_name": "Андреевич",
+    "photo": "person_photos/11.jpeg",
+    "birth_date": "1996-12-02",
+    "gender": "M",
+    "social_hash": "11",
+    "login": "igor.belov",
+    "email": "igor.belov@orgdes.com",
+    "created_date": "2021-11-13T18:30:02.190Z",
+    "updated_date": "2021-11-13T18:30:02.191Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 12,
+  "fields": {
+    "guid": null,
+    "last_name": "Фролов",
+    "first_name": "Артур",
+    "middle_name": "Владимирович",
+    "photo": "person_photos/12.jpeg",
+    "birth_date": "1994-12-09",
+    "gender": "M",
+    "social_hash": "12",
+    "login": "artur.frolov",
+    "email": "artur.frolov@orgdes.com",
+    "created_date": "2021-11-13T18:31:12.614Z",
+    "updated_date": "2021-11-13T18:31:12.614Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 13,
+  "fields": {
+    "guid": null,
+    "last_name": "Смирнов",
+    "first_name": "Илья",
+    "middle_name": "Александрович",
+    "photo": "person_photos/13.jpeg",
+    "birth_date": "1994-05-19",
+    "gender": "M",
+    "social_hash": "13",
+    "login": "ilya.smirnov",
+    "email": "ilya.smirnov@orgdes.com",
+    "created_date": "2021-11-13T18:35:19.164Z",
+    "updated_date": "2021-11-13T18:35:19.164Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 14,
+  "fields": {
+    "guid": null,
+    "last_name": "Бунина",
+    "first_name": "Клавдия",
+    "middle_name": "Никифоровна",
+    "photo": "person_photos/14.jpeg",
+    "birth_date": "1989-06-25",
+    "gender": "M",
+    "social_hash": "14",
+    "login": "klavdiya.bunina",
+    "email": "klavdiya.bunina@orgdes.com",
+    "created_date": "2021-11-13T18:36:48.177Z",
+    "updated_date": "2021-11-13T18:36:48.177Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 15,
+  "fields": {
+    "guid": null,
+    "last_name": "Пажинская",
+    "first_name": "Вероника",
+    "middle_name": "Сергеевна",
+    "photo": "person_photos/15.jpeg",
+    "birth_date": "1997-12-16",
+    "gender": "W",
+    "social_hash": "15",
+    "login": "veronika.pazhinskaya",
+    "email": "veronika.pazhinskaya@orgdes.com",
+    "created_date": "2021-11-13T18:38:07.128Z",
+    "updated_date": "2021-11-13T18:38:07.128Z"
+  }
+},
+{
+  "model": "empapp.person",
+  "pk": 16,
+  "fields": {
+    "guid": null,
+    "last_name": "Успенская",
+    "first_name": "Анна",
+    "middle_name": "Юрьевна",
+    "photo": "person_photos/16.jpeg",
+    "birth_date": "1994-04-21",
+    "gender": "W",
+    "social_hash": "16",
+    "login": "anna.uspenskaya",
+    "email": "anna.uspenskaya@orgdes.com",
+    "created_date": "2021-11-13T18:40:01.972Z",
+    "updated_date": "2021-11-13T18:40:01.972Z"
   }
 }
 ]

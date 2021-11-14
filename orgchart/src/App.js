@@ -4,7 +4,7 @@ import OrgChart from './components/orgchart/MainChart';
 import axios from 'axios';
 import Layout from "./components/layout/Layout";
 
-const API_ROOT = 'http://127.0.0.1:8000/api/';
+const API_ROOT = 'http://127.0.0.1:8000/';
 const getUrl = url => `${API_ROOT}${url}`;
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
     useEffect(() => {
         const headers = {'Content-Type': 'application/json'}
         axios
-            .get(getUrl('employees/'), {headers})
+            .get(getUrl('api/orgchart/'), {headers})
             .then(response => {
                 setEmployees(response.data.results);
                 setLoading(false)
