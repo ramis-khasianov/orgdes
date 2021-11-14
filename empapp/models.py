@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Sum
+from django.db.models.query import Q
 
 
 class Organization(models.Model):
@@ -51,6 +52,9 @@ class StaffPosition(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'{self.get_current_fte()}/{self.fte_count}, {self.department} // {self.job_title}: {self.get_current_employee_name()}'
+
     def get_current_employee_id(self):
         employees = self.employees.all()
         records_count = employees.count()
@@ -78,8 +82,67 @@ class StaffPosition(models.Model):
             return self.employees.aggregate(Sum('employment_rate'))['employment_rate__sum']
         return 0
 
-    def __str__(self):
-        return f'{self.get_current_fte()}/{self.fte_count}, {self.department} // {self.job_title}: {self.get_current_employee_name()}'
+    def get_current_total_fte(self):
+        ids = self.get_full_tree_ids()
+        qs = StaffPosition.objects.filter(id__in=ids)
+        total_fte = 0
+        for q in qs:
+            total_fte += q.get_current_fte()
+        return total_fte
+
+    def get_full_tree_ids(self):
+        """Метод проходит по всему дереву подчинения и соберет сет с прямыми и непрямыми подчиненными"""
+        # Все айдишники набьем в сет, начиная с самого себя
+        all_tree_ids = set()
+
+        # Берем список id прямых подчиненных. Теперь это потенциальные менеджеры, по которым проверямем подчиненных
+        potential_managers_list = list(StaffPosition.objects.filter(manager_id=self.id).values_list('id', flat=True))
+
+        # Если он не пустой то начинаем ходить по нему, pop'ая по одному элементу и пока список не закончится
+        if len(potential_managers_list) > 0:
+            while len(potential_managers_list) > 0:
+
+                # Берем первый элемент из списка потенциальных менеджеров
+                next_potential_manager_id = potential_managers_list.pop(0)
+
+                # Добавляем его в итоговый лист, т.к. он в любом случае в общем списке подчиненных
+                all_tree_ids.add(next_potential_manager_id)
+
+                # Получаем список их прямых подчиненных
+                potential_managers_subordinates = StaffPosition.objects.filter(manager_id=next_potential_manager_id)
+
+                # Если он не пустой, то работаем с ним дальше
+                if potential_managers_subordinates:
+
+                    # Список новых прямых подчиненных добавляем в общий список
+                    new_indirect_reports = potential_managers_subordinates.values_list('id', flat=True)
+                    all_tree_ids.update(new_indirect_reports)
+
+                    # Дальше проверяем, может в списке есть новые потенциальные менеджеры. Проходимся по списку
+                    for sub_subordinate in potential_managers_subordinates:
+
+                        # Для каждого проверяем, есть ли подчиненные
+                        sub_sub_subordinates = StaffPosition.objects.filter(manager_id=sub_subordinate.id)
+
+                        # Если все же есть подчиненные
+                        if sub_sub_subordinates.count() > 0:
+
+                            # Формируем из этого добра список
+                            new_potential_managers = list(sub_sub_subordinates.values_list('id', flat=True))
+
+                            # Добавляем их в общий список
+                            potential_managers_list.append(new_potential_managers)
+
+        # Возвращаем сет. Каждый сет будет для объекта будет содержать айдишник самого себя и всех подчиненных
+        return all_tree_ids
+
+    def get_current_total_fte2(self):
+        direct_subordinates = self.subordinates.all()
+        total_fte = 0
+        for sub in direct_subordinates:
+            total_fte = total_fte + sub.employees.aggregate(Sum('employment_rate'))['employment_rate__sum']
+        return total_fte
+
 
 
 class Person(models.Model):
@@ -129,6 +192,9 @@ class Employee(models.Model):
             return f'{self.person.last_name} {self.person.first_name}'
         return f'Вакансия: {self.staff_position.title}'
 
+    class Meta:
+        ordering = ('staff_position__department', 'id')
+
     def get_name(self):
         if self.person:
             return f'{self.person.last_name} {self.person.first_name}'
@@ -149,6 +215,23 @@ class Employee(models.Model):
         if self.vacancy_approved_date:
             return self.vacancy_approved_date.date()
 
-    class Meta:
-        ordering = ('staff_position__department', 'id')
+    def get_all_subordinates_fte(self):
+        total_fte = self.employment_rate
+        subordinates_staff_ids = self.staff_position.get_full_tree_ids()
+        qs = Employee.objects.filter(staff_position__id__in=subordinates_staff_ids)
+        subordinates_fte = qs.aggregate(Sum('employment_rate'))['employment_rate__sum']
+        if subordinates_fte:
+            total_fte += subordinates_fte
+        return total_fte
+
+    def get_all_subordinates_payroll(self):
+        total_payroll = self.salary_terms.get_total_monthly_payroll()
+        subordinates_staff_ids = self.staff_position.get_full_tree_ids()
+        qs = Employee.objects.filter(staff_position__id__in=subordinates_staff_ids)
+        for q in qs:
+            total_payroll += q.salary_terms.get_total_monthly_payroll()
+        return total_payroll
+
+
+
 

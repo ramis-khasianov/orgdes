@@ -23,7 +23,7 @@ class SalaryTerms(models.Model):
     def get_total_monthly_payroll(self):
         total_payroll = self.salary + self.get_bonus_sum()
         total_payroll = float(total_payroll) * 1.24  # Отчисления
-        return total_payroll
+        return round(total_payroll, 2)
 
     def get_bonus_description(self):
         bonus_terms = self.bonus_terms.all()
