@@ -1,30 +1,62 @@
+import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import classes from './Toolbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
+import OptionsContext from "../options/options-context";
 
 const Toolbar = () => {
+
+    const optionsContext = useContext(OptionsContext);
 
     return (
         <div className={classes.toolbar}>
             <div className={classes.btn_group}>
-                <Link to="/">Органиграмма</Link>
-                <Link to="/table">Таблица</Link>
+                <button
+                    onClick={optionsContext.toggleViewType}
+                    className={optionsContext.viewType === 'organigramm' ? classes.btn_active : classes.btn_not_active}
+                >Органиграмма
+                </button>
+                <button
+                    onClick={optionsContext.toggleViewType}
+                    className={optionsContext.viewType === 'table' ? classes.btn_active : classes.btn_not_active}
+                >Таблица</button>
             </div>
             <div className={classes.btn_group}>
-                <Link to="/admin">Административная</Link>
-                <Link to="/functions">Функциональная</Link>
+                <button
+                    onClick={optionsContext.toggleHierarchyType}
+                    className={optionsContext.hierarchyType === 'functional' ? classes.btn_active : classes.btn_not_active}
+                >Административная
+                </button>
+                <button
+                    onClick={optionsContext.toggleHierarchyType}
+                    className={optionsContext.hierarchyType === 'administrative' ? classes.btn_active : classes.btn_not_active}
+                >Функциональная
+                </button>
             </div>
             <div className={classes.btn_group}>
-                <Link to="/asis">Фактическая</Link>
-                <Link to="/modeled">Моделирование</Link>
+                <button
+                    onClick={optionsContext.toggleVersionType}
+                    className={optionsContext.versionType === 'asis' ? classes.btn_active : classes.btn_not_active}>
+                    Фактическая
+                </button>
+                <button
+                    onClick={optionsContext.toggleVersionType}
+                    className={optionsContext.versionType === 'modeled' ? classes.btn_active : classes.btn_not_active}>
+                    С моими изменениями
+                </button>
             </div>
             <div className={classes.btn}>
-                <FontAwesomeIcon icon={faCog} />
+                <button className={classes.btn}>
+                    <FontAwesomeIcon icon={faCog} />
+                </button>
             </div>
 
             <div>
-                <Link className={classes.btn}>Изменения</Link>
+                <button
+                    className={classes.btn}
+                >Изменения
+                </button>
             </div>
         </div>
     );

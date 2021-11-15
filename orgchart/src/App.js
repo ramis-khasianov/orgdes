@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import OrgChart from './components/orgchart/MainChart';
 import axios from 'axios';
 import Layout from "./components/layout/Layout";
@@ -27,15 +27,13 @@ const App = () => {
     }
 
     return (
-        <BrowserRouter>
-            <Layout>
-                <Switch>
-                    <Route exact path='/'>
-                        <OrgChart nodes={employees}/>
-                    </Route>
-                </Switch>
-            </Layout>
-        </BrowserRouter>
+        <Layout>
+            <Switch>
+                <Route exact path='/'>
+                    <OrgChart nodes={employees}/>
+                </Route>
+            </Switch>
+        </Layout>
     );
 }
 

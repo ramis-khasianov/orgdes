@@ -15,6 +15,7 @@ class MainOrgchart extends Component {
 
     componentDidMount() {
         OrgChart.templates.uc = Object.assign({}, OrgChart.templates.mery);
+
         OrgChart.templates.uc.payroll = '<text style="font-size: 12px;" fill="#ffffff" x="8" y="65">ФОТ: {val}</text>';
         OrgChart.templates.uc.fte = '<text style="font-size: 14px;" fill="#ffffff" x="162" y="66">{val} FTE</text>';
 
