@@ -26,6 +26,7 @@ class OrgChartSerializer(serializers.ModelSerializer):
 
     all_subordinates_fte = serializers.FloatField(source='get_all_subordinates_fte')
     all_subordinates_payroll = serializers.FloatField(source='get_all_subordinates_payroll')
+    all_subordinates_payroll_text = serializers.CharField(source='get_all_subordinates_payroll_text')
 
     class Meta:
         model = Employee
@@ -34,4 +35,4 @@ class OrgChartSerializer(serializers.ModelSerializer):
                   'manager_id', 'manager_name', 'is_long_absence', 'hire_date', 'exit_date',
                   'is_vacancy', 'vacancy_approved_date',
                   'salary', 'bonus', 'bonus_description', 'total_payroll',
-                  'all_subordinates_fte', 'all_subordinates_payroll']
+                  'all_subordinates_fte', 'all_subordinates_payroll', 'all_subordinates_payroll_text']

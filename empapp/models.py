@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models import Sum
-from django.db.models.query import Q
+import locale
 
 
 class Organization(models.Model):
@@ -231,6 +231,10 @@ class Employee(models.Model):
         for q in qs:
             total_payroll += q.salary_terms.get_total_monthly_payroll()
         return total_payroll
+
+    def get_all_subordinates_payroll_text(self):
+        total_payroll = int(self.get_all_subordinates_payroll())
+        return f'{total_payroll:,}'.replace(',', '\u00A0')
 
 
 

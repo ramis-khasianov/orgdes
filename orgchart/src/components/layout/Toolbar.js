@@ -14,7 +14,6 @@ const Toolbar = () => {
             <div className={classes.btn_group}>
                 <Link to="/admin">Административная</Link>
                 <Link to="/functions">Функциональная</Link>
-                <Link to="/projects">Проектные команды</Link>
             </div>
             <div className={classes.btn_group}>
                 <Link to="/asis">Фактическая</Link>
@@ -25,7 +24,7 @@ const Toolbar = () => {
             </div>
 
             <div>
-                <Link className={classes.btn}>Согласовать</Link>
+                <Link className={classes.btn}>Изменения</Link>
             </div>
         </div>
     );
