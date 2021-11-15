@@ -37,11 +37,12 @@
   align-items: center;
 }
 
-.user_profile_items div {
+.user_profile_item {
   margin-left: 16px;
+  color: white;
 }
 
-.user_profile_items div:hover {
+.user_profile_item:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -50,7 +51,7 @@
   margin-left: 3rem;
 }
 
-.header a, div {
+.header a {
   text-decoration: none;
   font-size: 1rem;
   color: white;

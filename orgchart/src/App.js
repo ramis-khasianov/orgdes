@@ -50,8 +50,10 @@ const App = () => {
     }
 
     const logout = () => {
+        console.log('wtf')
         setUserToken('')
         setEmployees([])
+        console.log(employees)
     };
 
     const loadData = () => {

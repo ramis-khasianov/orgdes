@@ -22,7 +22,7 @@ const LoginForm = ({getToken}) => {
 
     return (
         <div className={classes.form_box} >
-            <div className={classes.header}>Войти в систему</div>
+            <div className={classes.form_header}>Войти в систему</div>
             <form className={classes.form} onSubmit={(event) => handleSubmit(event)}>
                     <label htmlFor={'username'}>Логин</label>
                     <input type={'text'} name={'username'} id={'username'} placeholder={'ivan.petrov'}

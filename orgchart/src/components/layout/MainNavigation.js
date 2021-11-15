@@ -5,8 +5,8 @@ const MainNavigation = ({isAuthenticated, logoutAction, username}) => {
     let loginButton = ''
     if (isAuthenticated) {
         loginButton = <div className={classes.user_profile_items}>
-            <div>{username}</div>
-            <div className={'logout_btn'} onClick={logoutAction}>Выйти</div>
+            <div className={classes.user_profile_item}>{username}</div>
+            <div className={classes.user_profile_item} onClick={logoutAction}>Выйти</div>
         </div>
     } else {
         loginButton = <div className={classes.user_profile_items}><Link to={'/login'}>Войти</Link></div>
