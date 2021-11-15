@@ -1,6 +1,27 @@
 from rest_framework import serializers
 
-from empapp.models import Employee
+from empapp.models import Employee, Organization, Department, JobTitle
+
+
+class OrganizationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Organization
+        fields = '__all__'
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Department
+        fields = '__all__'
+
+
+class JobTitleSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = JobTitle
+        fields = '__all__'
 
 
 class OrgChartSerializer(serializers.ModelSerializer):

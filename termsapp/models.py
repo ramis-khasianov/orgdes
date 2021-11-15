@@ -6,6 +6,9 @@ class SalaryTerms(models.Model):
     """Оклад сотрудника"""
     employee = models.OneToOneField(Employee, related_name='salary_terms', on_delete=models.PROTECT)
     salary = models.DecimalField(max_digits=12, decimal_places=2)
+    is_actual = models.IntegerField(default=0)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'оклад'
@@ -67,6 +70,9 @@ class BonusTerms(models.Model):
     bonus_schema = models.CharField(choices=BONUS_TYPE_CHOICES, max_length=10, default=PERCENT)
     bonus_period = models.CharField(choices=BONUS_PERIOD_CHOICES, max_length=10, default=ANNUAL)
     bonus_value = models.DecimalField(max_digits=12, decimal_places=2)
+    is_actual = models.IntegerField(default=0)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.salary_terms.employee}: {self.bonus_value}, {self.bonus_period}, {self.bonus_schema}'

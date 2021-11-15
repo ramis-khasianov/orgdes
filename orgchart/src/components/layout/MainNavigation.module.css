@@ -13,6 +13,12 @@
   color: white;
 }
 
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header ul {
   list-style: none;
   margin: 0;
@@ -21,11 +27,30 @@
   align-items: baseline;
 }
 
+.header .user_profile {
+  margin-left: auto;
+}
+
+.user_profile_items {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.user_profile_items div {
+  margin-left: 16px;
+}
+
+.user_profile_items div:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .header li {
   margin-left: 3rem;
 }
 
-.header a {
+.header a, div {
   text-decoration: none;
   font-size: 1rem;
   color: white;

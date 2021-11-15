@@ -1,7 +1,16 @@
 import {Link} from 'react-router-dom';
 import classes from './MainNavigation.module.css'
 
-const MainNavigation = () => {
+const MainNavigation = ({isAuthenticated, logoutAction, username}) => {
+    let loginButton = ''
+    if (isAuthenticated) {
+        loginButton = <div className={classes.user_profile_items}>
+            <div>{username}</div>
+            <div className={'logout_btn'} onClick={logoutAction}>Выйти</div>
+        </div>
+    } else {
+        loginButton = <div className={classes.user_profile_items}><Link to={'/login'}>Войти</Link></div>
+    }
 
     return (
         <header className={classes.header}>
@@ -19,6 +28,9 @@ const MainNavigation = () => {
                     </li>
                 </ul>
             </nav>
+            <div className={classes.user_profile}>
+                {loginButton}
+            </div>
         </header>
     );
 }

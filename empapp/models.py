@@ -7,6 +7,7 @@ class Organization(models.Model):
     title = models.CharField(max_length=150)
     short_title = models.CharField(max_length=30)
     group_name = models.CharField(max_length=30)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -25,6 +26,7 @@ class Department(models.Model):
     parent_department = models.ForeignKey('self', related_name='subdepartments', on_delete=models.PROTECT,
                                           null=True, blank=True)
     organization = models.ForeignKey(Organization, on_delete=models.PROTECT)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -58,6 +60,7 @@ class StaffPosition(models.Model):
                                 null=True, blank=True)
     fte_count = models.DecimalField(max_digits=5, decimal_places=2)
     approved_date = models.DateTimeField(null=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -177,6 +180,7 @@ class Person(models.Model):
     social_hash = models.CharField(max_length=20)
     login = models.CharField(max_length=100, null=True)
     email = models.CharField(max_length=120, null=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -200,6 +204,7 @@ class Employee(models.Model):
     is_long_absence = models.IntegerField(default=0)
     long_absence_type = models.CharField(max_length=50, null=True, blank=True)
     vacancy_approved_date = models.DateTimeField(null=True, blank=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
