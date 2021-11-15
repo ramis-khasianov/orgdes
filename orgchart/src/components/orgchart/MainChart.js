@@ -56,10 +56,9 @@ class MainOrgchart extends Component {
                 expandAll: true
             },
             nodeMenu: {
-                details: { text: "Details" },
-                edit: { text: "Edit" },
-                add: { text: "Add" },
-                remove: { text: "Remove" }
+                details: { text: "Профиль" },
+                edit: { text: "Изменить" },
+                add: { text: "Добавить подчиненного" }
             },
             nodes: this.props.nodes,
 

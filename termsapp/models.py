@@ -8,7 +8,8 @@ class SalaryTerms(models.Model):
     salary = models.DecimalField(max_digits=12, decimal_places=2)
 
     class Meta:
-        verbose_name_plural = 'salary terms'
+        verbose_name = 'оклад'
+        verbose_name_plural = 'оклады'
 
     def __str__(self):
         return f'Оклад {self.employee}'
@@ -71,7 +72,8 @@ class BonusTerms(models.Model):
         return f'{self.salary_terms.employee}: {self.bonus_value}, {self.bonus_period}, {self.bonus_schema}'
 
     class Meta:
-        verbose_name_plural = 'bonus terms'
+        verbose_name = 'условия премии'
+        verbose_name_plural = 'условия премий'
 
     def get_monthly_bonus_sum(self):
         rates = {

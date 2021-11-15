@@ -1,10 +1,8 @@
 from django.db import models
 from django.db.models import Sum
-import locale
 
 
 class Organization(models.Model):
-    """Организация, Юридическое лицо"""
     guid = models.CharField(max_length=50, null=True, blank=True)
     title = models.CharField(max_length=150)
     short_title = models.CharField(max_length=30)
@@ -14,6 +12,10 @@ class Organization(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'организация'
+        verbose_name_plural = 'организации'
 
 
 class Department(models.Model):
@@ -29,14 +31,21 @@ class Department(models.Model):
     def __str__(self):
         return f'{self.title}'
 
+    class Meta:
+        verbose_name = 'подразделение'
+        verbose_name_plural = 'подразделения'
+
 
 class JobTitle(models.Model):
-    """Должности"""
     guid = models.CharField(max_length=50, primary_key=True)
     title = models.CharField(max_length=150)
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'должность'
+        verbose_name_plural = 'должности'
 
 
 class StaffPosition(models.Model):
@@ -54,6 +63,10 @@ class StaffPosition(models.Model):
 
     def __str__(self):
         return f'{self.get_current_fte()}/{self.fte_count}, {self.department} // {self.job_title}: {self.get_current_employee_name()}'
+
+    class Meta:
+        verbose_name = 'штатная позиция'
+        verbose_name_plural = 'штатные позиции'
 
     def get_current_employee_id(self):
         employees = self.employees.all()
@@ -144,7 +157,6 @@ class StaffPosition(models.Model):
         return total_fte
 
 
-
 class Person(models.Model):
     """Физические лица"""
     MALE = 'M'
@@ -171,6 +183,10 @@ class Person(models.Model):
     def __str__(self):
         return f'{self.last_name} {self.first_name} {self.middle_name}'
 
+    class Meta:
+        verbose_name = 'физическое лицо'
+        verbose_name_plural = 'физические лица'
+
 
 class Employee(models.Model):
     """Сотрудники и вакансии"""
@@ -194,6 +210,8 @@ class Employee(models.Model):
 
     class Meta:
         ordering = ('staff_position__department', 'id')
+        verbose_name = 'сотрудник'
+        verbose_name_plural = 'сотрудники'
 
     def get_name(self):
         if self.person:

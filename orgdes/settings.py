@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'corsheaders',
     'userapp',
     'empapp',
-    'termsapp'
+    'termsapp',
+    'changeapp'
 ]
 
 MIDDLEWARE = [
