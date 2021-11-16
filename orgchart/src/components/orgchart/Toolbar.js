@@ -42,7 +42,7 @@ const Toolbar = () => {
                 <button
                     onClick={optionsContext.toggleVersionType}
                     className={optionsContext.versionType === 'modeled' ? classes.btn_active : classes.btn_not_active}>
-                    С моими изменениями
+                    С изменениями
                 </button>
             </div>
             <div className={classes.btn}>

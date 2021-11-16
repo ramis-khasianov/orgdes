@@ -89,9 +89,10 @@ class MainOrgchart extends Component {
 
         this.chart.on('update', (sender, oldNode, newNode) => {
             let initialNode = this.getNode(newNode.id)
+
             for (let key in newNode) {
-                if (initialNode.hasOwnProperty(key) && newNode[key] != initialNode[key]) {
-                    console.log(key)
+                if (newNode.hasOwnProperty(key)){
+                    console.log(`${key}: ${initialNode[key]} -> ${newNode[key]}`)
                 }
             }
         });

@@ -32,6 +32,16 @@ const App = () => {
         }
     }
 
+    const getHeaders = () => {
+        let headers = {
+            'Content-Type': 'application/json'
+        }
+        if (isAuthenticated()) {
+            headers['Authorization'] = `Token ${userToken}`
+        }
+        return headers
+    }
+
     const getToken = (username, password) => {
         axios.post(getUrl('api/token-auth/'), {username: username, password: password})
             .then(response => {
@@ -50,14 +60,12 @@ const App = () => {
     }
 
     const logout = () => {
-        console.log('wtf')
         setUserToken('')
         setEmployees([])
-        console.log(employees)
     };
 
     const loadData = () => {
-        const headers = {'Content-Type': 'application/json'}
+        const headers = getHeaders()
         axios
             .get(getUrl('api/orgchart/'), {headers})
             .then(response => {
