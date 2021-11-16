@@ -1,19 +1,22 @@
 from django.db import models
 from django.db.models import Sum
-import locale
 
 
 class Organization(models.Model):
-    """Организация, Юридическое лицо"""
     guid = models.CharField(max_length=50, null=True, blank=True)
     title = models.CharField(max_length=150)
     short_title = models.CharField(max_length=30)
     group_name = models.CharField(max_length=30)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'организация'
+        verbose_name_plural = 'организации'
 
 
 class Department(models.Model):
@@ -23,20 +26,28 @@ class Department(models.Model):
     parent_department = models.ForeignKey('self', related_name='subdepartments', on_delete=models.PROTECT,
                                           null=True, blank=True)
     organization = models.ForeignKey(Organization, on_delete=models.PROTECT)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.title}'
 
+    class Meta:
+        verbose_name = 'подразделение'
+        verbose_name_plural = 'подразделения'
+
 
 class JobTitle(models.Model):
-    """Должности"""
     guid = models.CharField(max_length=50, primary_key=True)
     title = models.CharField(max_length=150)
 
     def __str__(self):
         return f'{self.title}'
+
+    class Meta:
+        verbose_name = 'должность'
+        verbose_name_plural = 'должности'
 
 
 class StaffPosition(models.Model):
@@ -49,11 +60,16 @@ class StaffPosition(models.Model):
                                 null=True, blank=True)
     fte_count = models.DecimalField(max_digits=5, decimal_places=2)
     approved_date = models.DateTimeField(null=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.get_current_fte()}/{self.fte_count}, {self.department} // {self.job_title}: {self.get_current_employee_name()}'
+
+    class Meta:
+        verbose_name = 'штатная позиция'
+        verbose_name_plural = 'штатные позиции'
 
     def get_current_employee_id(self):
         employees = self.employees.all()
@@ -144,7 +160,6 @@ class StaffPosition(models.Model):
         return total_fte
 
 
-
 class Person(models.Model):
     """Физические лица"""
     MALE = 'M'
@@ -165,11 +180,16 @@ class Person(models.Model):
     social_hash = models.CharField(max_length=20)
     login = models.CharField(max_length=100, null=True)
     email = models.CharField(max_length=120, null=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.last_name} {self.first_name} {self.middle_name}'
+
+    class Meta:
+        verbose_name = 'физическое лицо'
+        verbose_name_plural = 'физические лица'
 
 
 class Employee(models.Model):
@@ -184,6 +204,7 @@ class Employee(models.Model):
     is_long_absence = models.IntegerField(default=0)
     long_absence_type = models.CharField(max_length=50, null=True, blank=True)
     vacancy_approved_date = models.DateTimeField(null=True, blank=True)
+    is_actual = models.IntegerField(default=0)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
 
@@ -194,6 +215,8 @@ class Employee(models.Model):
 
     class Meta:
         ordering = ('staff_position__department', 'id')
+        verbose_name = 'сотрудник'
+        verbose_name_plural = 'сотрудники'
 
     def get_name(self):
         if self.person:

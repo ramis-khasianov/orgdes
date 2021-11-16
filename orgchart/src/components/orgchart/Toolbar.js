@@ -1,5 +1,4 @@
 import {useContext} from 'react';
-import {Link} from 'react-router-dom';
 import classes from './Toolbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCog } from '@fortawesome/free-solid-svg-icons'
@@ -25,12 +24,12 @@ const Toolbar = () => {
             <div className={classes.btn_group}>
                 <button
                     onClick={optionsContext.toggleHierarchyType}
-                    className={optionsContext.hierarchyType === 'functional' ? classes.btn_active : classes.btn_not_active}
+                    className={optionsContext.hierarchyType === 'administrative' ? classes.btn_active : classes.btn_not_active}
                 >Административная
                 </button>
                 <button
                     onClick={optionsContext.toggleHierarchyType}
-                    className={optionsContext.hierarchyType === 'administrative' ? classes.btn_active : classes.btn_not_active}
+                    className={optionsContext.hierarchyType === 'functional' ? classes.btn_active : classes.btn_not_active}
                 >Функциональная
                 </button>
             </div>
@@ -43,7 +42,7 @@ const Toolbar = () => {
                 <button
                     onClick={optionsContext.toggleVersionType}
                     className={optionsContext.versionType === 'modeled' ? classes.btn_active : classes.btn_not_active}>
-                    С моими изменениями
+                    С изменениями
                 </button>
             </div>
             <div className={classes.btn}>
