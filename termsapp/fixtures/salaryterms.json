@@ -4,7 +4,10 @@
   "pk": 1,
   "fields": {
     "employee": 1,
-    "salary": "500000.00"
+    "salary": "500000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -12,7 +15,10 @@
   "pk": 2,
   "fields": {
     "employee": 18,
-    "salary": "240000.00"
+    "salary": "240000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -20,7 +26,10 @@
   "pk": 3,
   "fields": {
     "employee": 2,
-    "salary": "350000.00"
+    "salary": "350000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -28,7 +37,10 @@
   "pk": 4,
   "fields": {
     "employee": 3,
-    "salary": "320000.00"
+    "salary": "320000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -36,7 +48,10 @@
   "pk": 5,
   "fields": {
     "employee": 7,
-    "salary": "320000.00"
+    "salary": "320000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -44,7 +59,10 @@
   "pk": 6,
   "fields": {
     "employee": 8,
-    "salary": "230000.00"
+    "salary": "230000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -52,7 +70,10 @@
   "pk": 7,
   "fields": {
     "employee": 9,
-    "salary": "170000.00"
+    "salary": "170000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -60,7 +81,10 @@
   "pk": 8,
   "fields": {
     "employee": 10,
-    "salary": "100000.00"
+    "salary": "100000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -68,7 +92,10 @@
   "pk": 9,
   "fields": {
     "employee": 11,
-    "salary": "140000.00"
+    "salary": "140000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -76,7 +103,10 @@
   "pk": 10,
   "fields": {
     "employee": 12,
-    "salary": "180000.00"
+    "salary": "180000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -84,7 +114,10 @@
   "pk": 11,
   "fields": {
     "employee": 19,
-    "salary": "150000.00"
+    "salary": "150000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -92,7 +125,10 @@
   "pk": 12,
   "fields": {
     "employee": 13,
-    "salary": "380000.00"
+    "salary": "380000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -100,7 +136,10 @@
   "pk": 13,
   "fields": {
     "employee": 14,
-    "salary": "150000.00"
+    "salary": "150000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -108,7 +147,10 @@
   "pk": 14,
   "fields": {
     "employee": 15,
-    "salary": "130000.00"
+    "salary": "130000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -116,7 +158,10 @@
   "pk": 15,
   "fields": {
     "employee": 4,
-    "salary": "200000.00"
+    "salary": "200000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -124,7 +169,10 @@
   "pk": 16,
   "fields": {
     "employee": 5,
-    "salary": "190000.00"
+    "salary": "190000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -132,7 +180,10 @@
   "pk": 17,
   "fields": {
     "employee": 6,
-    "salary": "190000.00"
+    "salary": "190000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -140,7 +191,21 @@
   "pk": 18,
   "fields": {
     "employee": 17,
-    "salary": "100000.00"
+    "salary": "100000.00",
+    "is_actual": 0,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
+  }
+},
+{
+  "model": "termsapp.salaryterms",
+  "pk": 19,
+  "fields": {
+    "employee": 16,
+    "salary": "130000.00",
+    "is_actual": 1,
+    "created_date": "2021-11-18T14:06:49.506Z",
+    "updated_date": "2021-11-18T14:06:49.506Z"
   }
 }
 ]

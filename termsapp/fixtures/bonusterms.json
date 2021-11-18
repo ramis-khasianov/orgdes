@@ -6,7 +6,10 @@
     "salary_terms": 1,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.50"
+    "bonus_value": "0.50",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -16,7 +19,10 @@
     "salary_terms": 2,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.40"
+    "bonus_value": "0.40",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -26,7 +32,10 @@
     "salary_terms": 3,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.40"
+    "bonus_value": "0.40",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -36,7 +45,10 @@
     "salary_terms": 5,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.40"
+    "bonus_value": "0.40",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -46,7 +58,10 @@
     "salary_terms": 6,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.20"
+    "bonus_value": "0.20",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -56,7 +71,10 @@
     "salary_terms": 7,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.20"
+    "bonus_value": "0.20",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -66,7 +84,10 @@
     "salary_terms": 8,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.20"
+    "bonus_value": "0.20",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -76,7 +97,10 @@
     "salary_terms": 9,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.20"
+    "bonus_value": "0.20",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -86,7 +110,10 @@
     "salary_terms": 10,
     "bonus_schema": "flat",
     "bonus_period": "quarterly",
-    "bonus_value": "20000.00"
+    "bonus_value": "20000.00",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -96,7 +123,10 @@
     "salary_terms": 11,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.20"
+    "bonus_value": "0.20",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -106,7 +136,10 @@
     "salary_terms": 12,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.40"
+    "bonus_value": "0.40",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -116,7 +149,10 @@
     "salary_terms": 13,
     "bonus_schema": "flat",
     "bonus_period": "quarterly",
-    "bonus_value": "20000.00"
+    "bonus_value": "20000.00",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -126,7 +162,10 @@
     "salary_terms": 14,
     "bonus_schema": "flat",
     "bonus_period": "quarterly",
-    "bonus_value": "20000.00"
+    "bonus_value": "20000.00",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -136,7 +175,10 @@
     "salary_terms": 15,
     "bonus_schema": "percent",
     "bonus_period": "quarterly",
-    "bonus_value": "0.30"
+    "bonus_value": "0.30",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -146,7 +188,10 @@
     "salary_terms": 16,
     "bonus_schema": "percent",
     "bonus_period": "quarterly",
-    "bonus_value": "0.30"
+    "bonus_value": "0.30",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -156,7 +201,10 @@
     "salary_terms": 17,
     "bonus_schema": "percent",
     "bonus_period": "quarterly",
-    "bonus_value": "0.30"
+    "bonus_value": "0.30",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -166,7 +214,10 @@
     "salary_terms": 18,
     "bonus_schema": "percent",
     "bonus_period": "quarterly",
-    "bonus_value": "0.30"
+    "bonus_value": "0.30",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
   }
 },
 {
@@ -176,7 +227,23 @@
     "salary_terms": 4,
     "bonus_schema": "percent",
     "bonus_period": "annual",
-    "bonus_value": "0.40"
+    "bonus_value": "0.40",
+    "is_actual": 1,
+    "created_date": "2021-11-13T18:12:11.492Z",
+    "updated_date": "2021-11-13T18:16:08.264Z"
+  }
+},
+{
+  "model": "termsapp.bonusterms",
+  "pk": 19,
+  "fields": {
+    "salary_terms": 19,
+    "bonus_schema": "flat",
+    "bonus_period": "quarterly",
+    "bonus_value": "20000.00",
+    "is_actual": 1,
+    "created_date": "2021-11-18T14:08:40.649Z",
+    "updated_date": "2021-11-18T14:08:40.649Z"
   }
 }
 ]
